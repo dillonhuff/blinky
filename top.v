@@ -8,11 +8,11 @@ module top(input hwclk,
 
    assign led1 = counter[10];
 
-   assign led2 = counter[31];
+   assign led2 = counter[25];
 
-   assign led3 = counter[19];
+   assign led3 = counter[20];
 
-   assign led4 = counter[10];
+   assign led4 = counter[15];
 
    always @(posedge hwclk) begin
       counter <= counter + 1;
