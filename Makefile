@@ -12,7 +12,6 @@ all:
 	make clean
 	mkdir $(BUILD)
 	yosys -p "synth_ice40 -top top -blif $(BUILD)/$(PROJ).blif" $(FILES)
-	#arachne-pnr -d $(subst hx,,$(subst lp,,$(DEVICE))) -o $(BUILD)/$(PROJ).asc -p $(BUILD)/$(PROJ).blif
 	arachne-pnr -d $(DEVICE) -P $(FOOTPRINT) -o $(BUILD)/$(PROJ).asc -p pinmap.pcf $(BUILD)/$(PROJ).blif
 	icepack $(BUILD)/$(PROJ).asc $(BUILD)/$(PROJ).bin
 
